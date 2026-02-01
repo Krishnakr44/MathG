@@ -27,7 +27,7 @@ import '@/modules/graphs/proportion/ProportionModule';
 
 // Geometry: Area & Surface Area
 import '@/modules/geometry/rectangle/RectangleModule';
-import '@/modules/geometry/cuboid/CuboidModule';
+import '@/modules/geometry/solids-3d/Solids3DModule';
 // Area Learning Engine (flat + curved examples)
 import '@/modules/geometry/rectangle-area/RectangleAreaModule';
 import '@/modules/geometry/circle-area/CircleAreaModule';
