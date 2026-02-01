@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* MathG — Design tokens (projection-friendly) */
+@import '../ui/styles/tokens.css';
+
+/* MathG — Projection-friendly, high contrast */
+:root {
+  --font-size-base: 18px;
+  --font-size-large: 22px;
+  --font-size-xl: 26px;
+  --contrast: high;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent: #1d4ed8;
+  --accent-hover: #1e40af;
+  --error: #dc2626;
+  --border: #e2e8f0;
+}
+
+html {
+  font-size: var(--font-size-base);
+}
+
+body {
+  @apply antialiased;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* High contrast for projector */
+.projection-mode {
+  --font-size-base: 20px;
+  --font-size-large: 24px;
+  --font-size-xl: 28px;
+}

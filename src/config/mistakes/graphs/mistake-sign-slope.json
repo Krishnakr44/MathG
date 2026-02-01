@@ -1,0 +1,49 @@
+{
+  "id": "mistake-sign-slope",
+  "domain": "graphs",
+  "classLevel": [7, 8],
+  "chapter": {
+    "en": "Linear Equations in Two Variables",
+    "hi-Latn": "Do charitrik samikaran",
+    "hi": "दो चरित्रिक समीकरण"
+  },
+  "concept": {
+    "en": "Confusing positive vs negative slope",
+    "hi-Latn": "Positive aur negative slope mein confusion",
+    "hi": "सकारात्मक और नकारात्मक ढलान में भ्रम"
+  },
+  "studentWrongAnswer": {
+    "en": "Student draws a line going upward when m is negative (e.g., y = -2x + 3)",
+    "hi-Latn": "Student jab m negative hai tab bhi line upar jaati hui banata hai",
+    "hi": "छात्र जब m नकारात्मक है तब भी रेखा ऊपर जाती हुई बनाता है"
+  },
+  "studentReasoning": {
+    "en": "They think 'negative' means the line goes down on the left side, not that it slopes downward left-to-right",
+    "hi-Latn": "Unhe lagta hai 'negative' matlab line niche jaati hai, par direction samajh nahi aata",
+    "hi": "उन्हें लगता है 'नकारात्मक' मतलब रेखा नीचे जाती है, पर दिशा समझ नहीं आती"
+  },
+  "correctReasoning": {
+    "en": "When m is negative, as x increases, y decreases. So the line slopes downward from left to right. Trace from left: high on left, low on right.",
+    "hi-Latn": "Jab m negative hai, x badhne par y ghatta hai. Isliye line left se right niche jati hai.",
+    "hi": "जब m नकारात्मक है, x बढ़ने पर y घटता है। इसलिए रेखा बाएं से दाएं नीचे जाती है।"
+  },
+  "examTip": {
+    "en": "In exams: If m < 0, line must go down left-to-right. Check: pick x=0 and x=1, compare y values.",
+    "hi-Latn": "Exam mein: agar m < 0, line left se right niche jani chahiye. x=0 aur x=1 daal kar y check karo.",
+    "hi": "परीक्षा में: यदि m < 0, रेखा बाएं से दाएं नीचे जानी चाहिए। x=0 और x=1 डालकर y जांचें।"
+  },
+  "visualizationActions": [
+    {
+      "id": "viz-slope-comparison",
+      "moduleDomain": "graphs",
+      "strategyId": "viz-slope-comparison",
+      "config": {
+        "highlightRegions": [{ "xMin": -2, "xMax": 0, "yMin": -2, "yMax": 2 }],
+        "expressionOverride": "y = -2x + 3"
+      }
+    }
+  ],
+  "commonExpression": "y = -2x + 3",
+  "tags": ["slope", "sign", "direction", "linear"],
+  "packId": "graphs-linear-equations"
+}

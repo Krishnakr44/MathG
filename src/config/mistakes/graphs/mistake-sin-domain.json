@@ -1,0 +1,49 @@
+{
+  "id": "mistake-sin-domain",
+  "domain": "graphs",
+  "classLevel": [7, 8],
+  "chapter": {
+    "en": "Introduction to Trigonometry",
+    "hi-Latn": "Trigonometri ka parichay",
+    "hi": "त्रिकोणमिति का परिचय"
+  },
+  "concept": {
+    "en": "Confusing sin domain with tan/cosec",
+    "hi-Latn": "Sin ka domain tan/cosec se mix karna",
+    "hi": "sin का डोमेन tan/cosec से मिलाना"
+  },
+  "studentWrongAnswer": {
+    "en": "Student thinks sin(x) is undefined at π/2 like tan(x), or draws vertical asymptotes for sin",
+    "hi-Latn": "Student sochta hai sin(x) π/2 par undefined hai jaise tan(x)",
+    "hi": "छात्र सोचता है sin(x) π/2 पर अपरिभाषित है जैसे tan(x)"
+  },
+  "studentReasoning": {
+    "en": "They generalize: 'trig functions have asymptotes' without distinguishing sin/cos (defined everywhere) from tan/cosec/sec (undefined at certain points).",
+    "hi-Latn": "Sabhi trig functions mein asymptotes hote hain — yeh galat generalize karte hain. sin/cos har jagah defined hai.",
+    "hi": "सभी त्रिकोणमितीय फलनों में अनंतस्पर्शी होते हैं — यह गलत सामान्यीकरण करते हैं। sin/cos हर जगह परिभाषित है।"
+  },
+  "correctReasoning": {
+    "en": "sin(x) and cos(x) are defined for all real x — no asymptotes. tan(x), cosec(x), sec(x), cot(x) have undefined points: tan and sec at π/2 + nπ; cosec and cot at nπ.",
+    "hi-Latn": "sin(x) aur cos(x) sabhi x ke liye defined hain. Tan, cosec, sec, cot mein kuch points par undefined hote hain.",
+    "hi": "sin(x) और cos(x) सभी x के लिए परिभाषित हैं। tan, cosec, sec, cot में कुछ बिंदुओं पर अपरिभाषित होते हैं।"
+  },
+  "examTip": {
+    "en": "In exams: sin and cos graphs are smooth curves with no breaks. Tan, cosec, sec, cot have vertical asymptotes. Don't add asymptotes to sin/cos.",
+    "hi-Latn": "Exam mein: sin aur cos ke graphs smooth hain, koi break nahi. Tan, cosec, sec, cot mein vertical asymptotes hain.",
+    "hi": "परीक्षा में: sin और cos के ग्राफ चिकने हैं, कोई विराम नहीं। tan, cosec, sec, cot में ऊर्ध्वाधर अनंतस्पर्शी हैं।"
+  },
+  "visualizationActions": [
+    {
+      "id": "viz-sin-vs-tan",
+      "moduleDomain": "graphs",
+      "strategyId": "viz-sin-vs-tan",
+      "config": {
+        "highlightRegions": [{ "xMin": -0.5, "xMax": 0.5, "yMin": -2, "yMax": 2 }],
+        "expressionOverride": "y = sin(x)"
+      }
+    }
+  ],
+  "commonExpression": "y = sin(x)",
+  "tags": ["trigonometry", "domain", "sin", "asymptote"],
+  "packId": "graphs-trigonometry"
+}

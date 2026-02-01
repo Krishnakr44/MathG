@@ -1,0 +1,49 @@
+{
+  "id": "mistake-intercept-zero",
+  "domain": "graphs",
+  "classLevel": [7, 8],
+  "chapter": {
+    "en": "Linear Equations in Two Variables",
+    "hi-Latn": "Do charitrik samikaran",
+    "hi": "दो चरित्रिक समीकरण"
+  },
+  "concept": {
+    "en": "Forgetting c when line passes through origin",
+    "hi-Latn": "Origin se guzarne wali line par c bhool jana",
+    "hi": "मूल बिंदु से गुजरने वाली रेखा पर c भूल जाना"
+  },
+  "studentWrongAnswer": {
+    "en": "Student assumes c = 0 whenever the line passes through (0,0), even for y = 2x",
+    "hi-Latn": "Student jab line (0,0) se guzarti hai tab c = 0 maan leta hai",
+    "hi": "छात्र जब रेखा (0,0) से गुजरती है तब c = 0 मान लेता है"
+  },
+  "studentReasoning": {
+    "en": "They confuse 'passes through origin' with 'c is always zero'. For y = 2x, c is 0, but for y = x + 1 passing through (-1,0), c is 1.",
+    "hi-Latn": "'Origin se guzarna' aur 'c = 0' ko mix kar dete hain. y = 2x mein c = 0 sahi hai, par y = x + 1 mein c = 1 hai.",
+    "hi": "'मूल से गुजरना' और 'c = 0' को मिला देते हैं। y = 2x में c = 0 सही है, पर y = x + 1 में c = 1 है।"
+  },
+  "correctReasoning": {
+    "en": "c is the y-intercept: where the line crosses the y-axis (x=0). A line through origin has c=0 only if it actually crosses y-axis at 0. For y = 2x, c=0. For y = x + 1, c=1 even though it crosses x-axis at (-1,0).",
+    "hi-Latn": "c y-intercept hai: jahan line y-axis ko kaat ti hai (x=0). Origin se guzarne wali line mein c=0 tabhi jab y-axis par 0 pe kaate.",
+    "hi": "c y-अवरोधन है: जहां रेखा y-अक्ष को काटती है (x=0)। मूल से गुजरने वाली रेखा में c=0 तभी जब y-अक्ष पर 0 पर काटे।"
+  },
+  "examTip": {
+    "en": "In exams: c = value of y when x = 0. Substitute x=0 in equation to get c. Don't confuse with x-intercept.",
+    "hi-Latn": "Exam mein: c = y ka value jab x = 0. Equation mein x=0 daal kar c nikalo. x-intercept se mat milao.",
+    "hi": "परीक्षा में: c = y का मान जब x = 0। समीकरण में x=0 डालकर c निकालें। x-अवरोधन से मत मिलाएं।"
+  },
+  "visualizationActions": [
+    {
+      "id": "viz-intercept-origin",
+      "moduleDomain": "graphs",
+      "strategyId": "viz-intercept-origin",
+      "config": {
+        "highlightRegions": [{ "xMin": -1, "xMax": 1, "yMin": -1, "yMax": 1 }],
+        "expressionOverride": "y = 2x"
+      }
+    }
+  ],
+  "commonExpression": "y = 2x",
+  "tags": ["intercept", "origin", "y-intercept", "linear"],
+  "packId": "graphs-linear-equations"
+}
