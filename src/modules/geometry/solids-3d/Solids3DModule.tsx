@@ -9,6 +9,7 @@
 import { BaseMathModule } from '@/modules/_base/base-module';
 import { registerModule } from '@/core/registry/module-registry';
 import { Solids3DWorkspace } from './Solids3DWorkspace';
+import type { Solids3DParameters } from './Solids3DWorkspace';
 import type { MathDomain, ModuleConfig, QuickAction, WorkspaceProps } from '@/core/types';
 
 const MODULE_ID = 'geometry-solids-3d';
@@ -50,19 +51,19 @@ export class Solids3DModule extends BaseMathModule {
   }
 
   renderWorkspace(props: WorkspaceProps): React.ReactNode {
-    const params = props.parameters as Record<string, unknown>;
-    const figureMap = ['cube', 'cuboid', 'prism', 'cylinder', 'cone', 'sphere'];
+    const params = props.parameters;
+    const figureMap = ['cube', 'cuboid', 'prism', 'cylinder', 'cone', 'sphere'] as const;
     const figure =
-      typeof params?.figure === 'string' && figureMap.includes(params.figure)
-        ? params.figure
-        : figureMap[Math.min(Math.max(0, Math.floor(Number(params?.figure) || 1)), 5)] ?? 'cuboid';
-    const parameters = { ...params, figure } as Record<string, unknown>;
+      typeof params?.figure === 'string' && figureMap.includes(params.figure as (typeof figureMap)[number])
+        ? (params.figure as string)
+        : figureMap[Math.min(Math.max(0, Math.floor(Number(params?.figure) ?? 1)), 5)] ?? 'cuboid';
+    const parameters: Solids3DParameters = { ...params, figure };
 
     return (
       <Solids3DWorkspace
         config={props.config as Record<string, unknown>}
         parameters={parameters}
-        onParametersChange={props.onParametersChange}
+        onParametersChange={props.onParametersChange as (v: Solids3DParameters) => void}
       />
     );
   }

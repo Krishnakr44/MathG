@@ -23,13 +23,17 @@ import type { GeometryViewMode } from '@/core/types/geometry.types';
 import type { FacePairId } from '@/engines/geometry-3d/types';
 import type { Solids3DKind } from '@/engines/geometry-viz/Solids3DCanvas';
 
+/** Solids3D uses figure as string (cube/cuboid/prism/...) in addition to numeric params */
+export type Solids3DParameters = Record<string, number | boolean | string>;
+
 export interface Solids3DWorkspaceProps {
   config: Record<string, unknown>;
-  parameters: ParameterValues;
-  onParametersChange: (v: ParameterValues) => void;
+  parameters: Solids3DParameters;
+  onParametersChange: (v: Solids3DParameters) => void;
 }
 
-const FIGURE_OPTIONS: { id: Figure3DKind | 'cube'; label: string }[] = [
+type FigureOptionId = Solids3DKind | 'cube';
+const FIGURE_OPTIONS: { id: FigureOptionId; label: string }[] = [
   { id: 'cube', label: 'Cube' },
   { id: 'cuboid', label: 'Cuboid' },
   { id: 'prism', label: 'Prism' },
@@ -49,7 +53,7 @@ function getFigure(figureId: string) {
   return FIGURES_3D[figureId] ?? cuboidFigure;
 }
 
-function getDimensions(figureId: string, parameters: ParameterValues): Record<string, number> {
+function getDimensions(figureId: string, parameters: Solids3DParameters): Record<string, number> {
   if (figureId === 'cube') {
     const s = (parameters.length as number) ?? 2;
     return { length: s, breadth: s, height: s };
@@ -86,7 +90,7 @@ export function Solids3DWorkspace({
   parameters,
   onParametersChange,
 }: Solids3DWorkspaceProps) {
-  const figureId = (parameters.figure as string) ?? 'cuboid';
+  const figureId: string = typeof parameters.figure === 'string' ? parameters.figure : 'cuboid';
   const [viewMode, setViewMode] = useState<GeometryViewMode>('3d');
   const [visiblePairs, setVisiblePairs] = useState<Set<FacePairId>>(new Set(['top-bottom', 'front-back', 'left-right']));
   const [highlightedPair, setHighlightedPair] = useState<FacePairId | null>(null);
@@ -143,7 +147,7 @@ export function Solids3DWorkspace({
   }, []);
 
   const showFacePairs = figureId === 'cube' || figureId === 'cuboid';
-  const kind: Solids3DKind = figureId === 'cube' ? 'cuboid' : figureId;
+  const kind: Solids3DKind = figureId === 'cube' ? 'cuboid' : (figureId as Solids3DKind);
 
   return (
     <AppLayout header={{ title: '3D Solids', showBack: true, backHref: '/' }}>
